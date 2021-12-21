@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 def uppercase(str):
-    newline = '\n'
     for i in range(len(str)):
         if ord(str[i]) <= 122 and ord(str[i]) >= 97:
             num = 32
