@@ -7,4 +7,3 @@ if __name__ == "__main__":
         if arg != sys.argv[0]:
             result = result + int(arg)
     print(result)
-    
