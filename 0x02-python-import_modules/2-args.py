@@ -2,7 +2,7 @@
 if __name__ == "__main__":
     import sys
 
-    if  len(sys.argv) == 2:
+    if len(sys.argv) == 2:
         print("1 argument:")
         print("1: ", end='')
         print("{:s}".format(sys.argv[1]))
