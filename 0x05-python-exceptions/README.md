@@ -1,0 +1,1 @@
+README for 6th python project on exceptions
