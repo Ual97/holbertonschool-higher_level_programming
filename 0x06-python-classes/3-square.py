@@ -14,6 +14,9 @@ class Square:
 
     Args:
         size: size of square
+    Functions:
+        __init__(self, size=0)
+        area(self)
     """
     def __init__(self, size=0):
         """
