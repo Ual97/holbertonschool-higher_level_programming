@@ -5,9 +5,6 @@ defines class square with private attribute size
 """
 
 
-from sunau import Au_read
-
-
 class Square:
     """
     class square definiton
@@ -33,10 +30,5 @@ class Square:
             self.__size = size
 
     def area(self):
-        """
-        area of square
-
-        Returns:
-            area of square
-         """
-        return(self.__size)**2
+        """Method that returns area of square"""
+        return(self.__size ** 2)
