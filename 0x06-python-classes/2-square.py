@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Module 2-square
-defines class square with private attribute size
+Module 3-square
+defines class square with private attribute size and returns area
 """
 
 
