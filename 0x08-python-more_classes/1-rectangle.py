@@ -17,12 +17,12 @@ class Rectangle:
         """init Rectangle"""
         self.width = width
         self.height = height
-    
+
     @property
     def width(self):
         """Returns width"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """sets width if > 0 and if int"""
