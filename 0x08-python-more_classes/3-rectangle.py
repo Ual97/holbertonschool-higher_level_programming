@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 0-Rectangle
+Module 3-Rectangle
 Defines an empty class Rectangle
 """
 
@@ -61,7 +61,10 @@ class Rectangle:
             return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
-        """Prints the rectangle"""
+        """Prints the rectangle
+            Returns:
+                rectangle in #
+        """
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
