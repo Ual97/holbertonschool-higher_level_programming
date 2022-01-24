@@ -21,6 +21,11 @@ class Rectangle:
         self.height = height
         type(self).num_of_instances += 1
 
+        def __del__(self):
+            """Deletes instance"""
+            type(self).num_of_instances -= 1
+            print("Bye rectangle...")
+
     @property
     def width(self):
         """Returns width"""
@@ -74,8 +79,3 @@ class Rectangle:
     def __repr__(self):
         """str repr, recreates a new instance"""
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
-
-    def __del__(self):
-        """Deletes instance"""
-        type(self).num_of_instances -= 1
-        print("Bye rectangle...")
