@@ -5,9 +5,6 @@ Defines an empty class Rectangle
 """
 
 
-from re import S
-
-
 class Rectangle:
     """Rectangle Class
 
