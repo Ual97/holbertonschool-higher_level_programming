@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 0-Rectangle
+Module 2-Rectangle
 Defines an empty class Rectangle
 """
 
@@ -15,8 +15,8 @@ class Rectangle:
     """
     def __init__(self, width=0, height=0):
         """init Rectangle"""
-        self.width = width
         self.height = height
+        self.width = width
 
     @property
     def width(self):
