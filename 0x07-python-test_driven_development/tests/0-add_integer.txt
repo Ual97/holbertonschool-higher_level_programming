@@ -11,7 +11,19 @@ This is an example text file in reStructuredText format.  First import
 
 TEST CASES:
 
+    SUM WITH 2 POSITIVES:
     >>> print(add_integer(1, 2))
     3
+
+    SUM WITH 1 NEGATIVE AND 1 POSITIVE:
     >>> print(add_integer(-1, 2))
     1
+
+    SUM WITH 2 NEGATIVES:
+    >>> print(add_integer(-1, -2))
+    -3
+    
+    SUM WITH 1 ARG (A):
+    >>> print(add_integer(1))
+    1
+
