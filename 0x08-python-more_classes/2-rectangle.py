@@ -17,12 +17,12 @@ class Rectangle:
         """init Rectangle"""
         self.width = width
         self.height = height
-    
+
     @property
     def width(self):
         """Returns width"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """sets width if > 0 and if int"""
@@ -49,7 +49,7 @@ class Rectangle:
     def area(self):
         """Returns the area of the rectangle"""
         return (self.__width * self.__height)
-    
+
     def perimeter(self):
         """Returns the perimeter of the rectangle"""
         if self.__height == 0 or self.__width == 0:
