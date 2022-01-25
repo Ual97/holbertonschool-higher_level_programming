@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """
 Module-0-add_integer
-Takes 2 values and returns the sum of them, if a float value is passed it is converted to int
+Takes 2 values and returns the sum of them,
+if a float value is passed it is converted to int
 """
+
 
 def add_integer(a, b=98):
     """
