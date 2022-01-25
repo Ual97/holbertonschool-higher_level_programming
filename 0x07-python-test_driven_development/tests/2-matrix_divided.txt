@@ -1,0 +1,34 @@
+The ``2-matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``matrix_divided`` from the ``2-matrix_divided`` module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+TEST CASES:
+
+    TEST WITH INTS AND FLOATS:
+    >>> matrix = [[1, 2, 3], [4, 5, 6.5]]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.25]]
+
+    TEST WITH BOOLEAN VALUES:
+    >>> matrix = [[True], [False]]
+    >>> print(matrix_divided(matrix, True))
+    [[1.0], [0.0]]
+
+    TEST WITH DIV VALUE = 0:
+    >>> matrix = [[1, 2, 3], [4, 5, 6.5]]
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+    TEST WITH DIV VALUE OF DIFFRENT TYPE (STRING):
+    >>> matrix = [[1, 2, 3], [4, 5, 6.5]]
+    >>> print(matrix_divided(matrix, "hello_world"))
+    
