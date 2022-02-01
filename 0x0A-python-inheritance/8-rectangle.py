@@ -14,7 +14,7 @@ class Rectangle(BaseGeometry):
     """based on parent class BaseGeometry"""
     def __init__(self, width, height):
         """init with width and heigth"""
-        super().integer_validator("width", width)
+        self.integer_validator("width", width)
         self.__width = width
-        super().integer_validator("height", height)
+        self.integer_validator("height", height)
         self.__height = height
