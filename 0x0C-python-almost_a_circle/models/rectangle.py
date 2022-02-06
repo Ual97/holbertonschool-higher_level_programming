@@ -1,0 +1,80 @@
+#!/usr/bin/python3
+"""
+Rectangle class:
+    private instance attributtes:
+        width
+        height
+        x
+        y
+    class constructor:
+        def __init__(self, width, height, x=0, y=0, id=None):
+"""
+
+from turtle import width
+from models.base import Base
+
+
+class Rectangle(Base):
+    """Rectangle class, inherits from Base class"""
+    def __init__(self, width, height, x=0, y=0, id=None):
+        super.__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
+    @property
+    def width(self):
+        """getter width"""
+        return self.__width
+
+    @property
+    def height(self):
+        """getter height"""
+        return self.__height
+
+    @property
+    def x(self):
+        """getter x"""
+        return self.__x
+
+    @property
+    def y(self):
+        """getter y"""
+        return self.__y
+
+    @width.setter
+    def width(self, value):
+        """setter width"""
+        if type(value) is not int:
+            raise TypeError("width id not an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+
+    @height.setter
+    def height(self, value):
+        """setter height"""
+        if type(value) is not int:
+            raise TypeError("height is not an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
+
+    @x.setter
+    def x(self, value):
+        """setter x"""
+        if type(value) is not int:
+            raise TypeError("x is not an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
+
+    @y.setter
+    def y(self, value):
+        """setter y"""
+        if type(value) is not int:
+            raise TypeError("y is not an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
