@@ -3,7 +3,7 @@
 Base class, with private class attribute __nb_objects = 0
 and class constructor __init__
 """
-from fileinput import filename
+
 import json
 import csv
 
@@ -32,12 +32,13 @@ class Base():
             list_dictionaries = []
         return json.dumps(list_dictionaries)
 
+    @classmethod
     def save_to_file(cls, list_objs):
         """writes JSON representation of list_objs to a file"""
         obj = []
         if list_objs is not None:
             for i in list_objs:
-                obj.append(cls.to_dictionary(i))
+                obj.append(list_objs[i].to_dictionary())
         filename = cls.__name__ + ".json"
         with open(filename, "w") as f:
             f.write(cls.to_json_string(obj))
