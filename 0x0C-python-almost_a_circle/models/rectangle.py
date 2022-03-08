@@ -10,14 +10,14 @@ Rectangle class:
         def __init__(self, width, height, x=0, y=0, id=None):
 """
 
-from turtle import width
 from models.base import Base
 
 
 class Rectangle(Base):
     """Rectangle class, inherits from Base class"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        super.__init__(id)
+        """init rectangle class"""
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
@@ -47,7 +47,7 @@ class Rectangle(Base):
     def width(self, value):
         """setter width"""
         if type(value) is not int:
-            raise TypeError("width id not an integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
@@ -56,7 +56,7 @@ class Rectangle(Base):
     def height(self, value):
         """setter height"""
         if type(value) is not int:
-            raise TypeError("height is not an integer")
+            raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
@@ -65,7 +65,7 @@ class Rectangle(Base):
     def x(self, value):
         """setter x"""
         if type(value) is not int:
-            raise TypeError("x is not an integer")
+            raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
@@ -74,7 +74,54 @@ class Rectangle(Base):
     def y(self, value):
         """setter y"""
         if type(value) is not int:
-            raise TypeError("y is not an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """returns area value of Rectangle instance"""
+        return self.__height * self.__width
+
+    def display(self):
+        """prints rectangle with '#' characters"""
+        rectangle = self.y * "\n"
+        for i in range(self.height):
+            rectangle += (" " * self.x)
+            rectangle += ("#" * self.width) + "\n"
+
+        print(rectangle, end='')
+
+    def __str__(self):
+        """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.__x, self.__y,
+            self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """assings an argument to each attribute in the
+        following order:
+            1 - id
+            2 - width
+            3 - height
+            4 - x
+            5 - y
+        """
+        attr = ["id", "width", "height", "x", "y"]
+        if args:
+            for i in range(len(args)):
+                setattr(self, attr[i], args[i])
+
+        else:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        """Return dictionary representation of rectangle"""
+        dic = {}
+        dic["id"] = self.id
+        dic["width"] = self.width
+        dic["height"] = self.height
+        dic["x"] = self.x
+        dic["y"] = self.y
+        return dic
