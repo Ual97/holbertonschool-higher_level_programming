@@ -1,4 +1,4 @@
-!/usr/bin/node
+#!/usr/bin/node
 
 const var1 = 'No argument';
 const var2 = process.argv[2];
