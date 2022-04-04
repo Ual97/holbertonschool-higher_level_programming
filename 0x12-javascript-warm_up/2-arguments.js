@@ -8,5 +8,5 @@ if (process.argv === 0) {
 } else if (process.argv === 1) {
   console.log(var2);
 } else if (process.argv > 1) {
-console.log(var3);
+  console.log(var3);
 }
