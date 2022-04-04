@@ -6,7 +6,6 @@ if (Number.isInteger(var2)) {
   for (let i = 0; i < var2; i++) {
     console.log(var1);
   }
-}
-else {
+} else {
   console.log('Missing number of occurrences');
 }
