@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 let i = 0;
-if (process.argv.length <= 2) {
+if (process.argv.length <= 3) {
   console.log('0');
 } else {
   const arr = process.argv;
@@ -10,5 +10,5 @@ if (process.argv.length <= 2) {
     if (Number.isInteger(sortedarr[i])) {
       parseInt(sortedarr[i]);
     }
-  } console.log(sortedarr[i - 1]);
+  } console.log(sortedarr[3]);
 }
