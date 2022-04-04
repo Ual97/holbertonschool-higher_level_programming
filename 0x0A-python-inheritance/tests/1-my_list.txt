@@ -1,0 +1,30 @@
+Import method:
+>>> MyList = __import__('1-my_list').MyList
+
+TEST WITH 4 INTS AND SORTED:
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.append(-7)
+>>> print(my_list)
+[1, 3, 5, -7]
+>>> my_list.print_sorted()
+[-7, 1, 3, 5]
+
+TEST WITH NO ELEMENTS AND SORTED:
+>>> no_ele = MyList()
+>>> print(no_ele)
+[]
+>>> no_ele.print_sorted()
+[]
+
+TEST TYPE, ISSUBCLASS AND ISINSTANCE:
+>>> type(MyList())
+<class '1-my_list.MyList'>
+>>> isinstance(MyList, object)
+True
+>>> isinstance(MyList, list)
+False
+>>> issubclass(MyList, list)
+True
