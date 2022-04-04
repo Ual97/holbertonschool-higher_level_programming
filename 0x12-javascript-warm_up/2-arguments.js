@@ -3,10 +3,10 @@
 const var1 = 'No argument';
 const var2 = 'Argument found';
 const var3 = 'Arguments found';
-if (process.argv === 0) {
+if (process.argv.length === 0) {
   console.log(var1);
-} else if (process.argv === 1) {
+} else if (process.argv.length === 1) {
   console.log(var2);
-} else if (process.argv > 1) {
+} else if (process.argv.length > 1) {
   console.log(var3);
 }
