@@ -14,7 +14,7 @@ module.exports = class Square extends Rectangle {
       }
     } else {
       for (let i = 0; i < this.width; i++) {
-        console.log('c'.repeat(this.height));
+        console.log('C'.repeat(this.height));
       }
     }
   }
