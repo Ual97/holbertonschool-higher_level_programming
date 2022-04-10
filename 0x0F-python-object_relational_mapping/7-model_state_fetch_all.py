@@ -9,16 +9,18 @@ from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-user = argv[1]
-passwd = argv[2]
-db = argv[3]
+if __name__ == "__main__":
 
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
-                       format(user, passwd, db), pool_pre_ping=True)
-Session = sessionmaker(bind=engine)
-session = Session()
+    user = argv[1]
+    passwd = argv[2]
+    db = argv[3]
 
-for instance in session.query(State).order_by(State.id):
-    print("{:d}: {:s}".format(instance.id, instance.name))
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
+                           format(user, passwd, db), pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-session.close()
+    for instance in session.query(State).order_by(State.id):
+        print("{:d}: {:s}".format(instance.id, instance.name))
+
+    session.close()
