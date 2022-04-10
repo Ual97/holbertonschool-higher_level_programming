@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """script that lists all values in states
- where name matches the argument"""
+ where name matches the argument. """
 
 import MySQLdb
 from sys import argv
