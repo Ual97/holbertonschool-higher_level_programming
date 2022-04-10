@@ -15,8 +15,10 @@ if __name__ == "__main__":
                          db=argv[3])
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC",
-                   (argv[4],))
+    qry = """SELECT *
+             FROM states
+             WHERE name LIKE '{:s}' ORDER BY id ASC""".format(argv[4])
+    cursor.execute(qry)
     query_row = cursor.fetchall()
     for row in query_row:
         print(row)
