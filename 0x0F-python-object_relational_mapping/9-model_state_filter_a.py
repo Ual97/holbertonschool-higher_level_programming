@@ -13,13 +13,14 @@ user = argv[1]
 passwd = argv[2]
 db = argv[3]
 
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
-                        format(user, passwd, db), pool_pre_ping=True)
-Session = sessionmaker(bind=engine)
-session = Session()
+if __name__ == "__main__":
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
+                           format(user, passwd, db), pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-for instance in session.query(State).filter(
+    for instance in session.query(State).filter(
             State.name.contains('a')).order_by(State.id):
-    print("{:d}: {:s}".format(instance.id, instance.name))
+        print("{:d}: {:s}".format(instance.id, instance.name))
 
-session.close()
+    session.close()
