@@ -3,7 +3,6 @@
 
 from sys import argv
 import urllib.request
-import urllib.response
 
 with urllib.request.urlopen(argv[1]) as response:
     html = response.read()
