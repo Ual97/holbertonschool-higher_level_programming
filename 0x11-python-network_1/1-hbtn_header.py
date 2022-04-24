@@ -7,4 +7,4 @@ import urllib.response
 
 with urllib.request.urlopen(argv[1]) as response:
     html = response.read()
-    print(html.headers)
+    print(response.headers)
