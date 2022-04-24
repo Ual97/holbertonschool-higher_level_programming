@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+"""python scrpit that fetches a url and displays it"""
+
+import urllib.request
+
+with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+    html = response.read()
