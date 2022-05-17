@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let fname = process.argv[2];
+const fname = process.argv[2];
 const fs = require('fs');
 fs.readFile(fname, 'utf8', function (err, data) {
   if (err) {
